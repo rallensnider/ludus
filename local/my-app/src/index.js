@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+/* import mouthImage from './img/themouth.png';
+ * // import rightBubble from './img/bubbleright3x.png'; */
+// import rightArrow from './img/arrowright3x.png';
+/* import fire from './img/zelda_fire.GIF'; */
 
 class HelpButton extends React.Component {
     checkMode() {
@@ -29,39 +33,44 @@ class HelpButton extends React.Component {
     }
 }
 
-class Switcher extends React.Component {
-    renderSwitcher() {
-        return (
-            <button className="toggle btn-floating btn-small waves-effect waves-light blue darken-4 grey-text text-darken-4" onClick={() => this.props.onClick()}>
-                <i className="material-icons">swap_horiz</i>
-            </button>
-        );
-    }
-
-    render() {
-        return (
-            <div className="switcher-layout row">
-                <div className="col s6">
-                    {this.renderSwitcher()}
-                </div>
-            </div>
-        );
-    }
-}
-
+/* class Switcher extends React.Component {
+ *     renderSwitcher() {
+ *         return (
+ *             <button className="toggle btn-floating btn-small waves-effect waves-light blue darken-4 grey-text text-darken-4" onClick={() => this.props.onClick()}>
+ *                 <i className="material-icons">swap_horiz</i>
+ *             </button>
+ *         );
+ *     }
+ *
+ *     render() {
+ *         return (
+ *             <div className="switcher-layout row">
+ *                 <div className="col s6">
+ *                     {this.renderSwitcher()}
+ *                 </div>
+ *             </div>
+ *         );
+ *     }
+ * }
+ *  */
 class Choice extends React.Component {
     renderChoice() {
+        // const choiceStyle = { background: 'url(' + rightArrow + ')' };
+        // <button className="pulse btn-large grey darken-2 waves-effect waves-light" onClick={() => this.props.onClick()}>
+        // {this.props.value}
+        // </button>
+        // <button className="pulse btn-flat waves-effect waves-light choice-button" onClick={() => this.props.onClick()}>
         if (this.props.isHelpOn) {
             if (this.props.value === this.props.correct) {
                 return (
-                    <button className="pulse btn-large grey darken-2 waves-effect waves-light" onClick={() => this.props.onClick()}>
+                    <button className="flat choice-button" onClick={() => this.props.onClick()}>
                         {this.props.value}
                     </button>
                 );
             }
         }
         return (
-            <button className="btn-large grey darken-3 waves-effect waves-light" onClick={() => this.props.onClick()}>
+            <button className="flat choice-button" onClick={() => this.props.onClick()}>
                 {this.props.value}
             </button>
         );
@@ -69,7 +78,7 @@ class Choice extends React.Component {
 
     render() {
         return (
-            <div className="choice grey lighten-1 card-action">
+            <div className="choice card-action">
                 {this.renderChoice()}
             </div>
         );
@@ -77,13 +86,17 @@ class Choice extends React.Component {
 }
 
 class Goal extends React.Component {
+    /* <img className="responsive-image" src={rightBubble} alt="Speech Bubble" /> */
     render () {
         return (
-            <div className="goal row blue-grey darken-3 deep-orange-text text-darken-4">
-                <div className="col s12">
-                    Find the <strong className="deep-orange-text text-accent-4">{this.props.value}</strong> ending…
+            <div className="goal row deep-orange-text text-darken-4">
+                {/* <img className="circle responsive-image" src={mouthImage} alt="Mouth of Truth" /> */}
+                <div className="col s12 clue">
+                    <div className="bubble">
+                        Take the street named after the <strong className="deep-orange-text text-accent-4">{this.props.value}</strong> ending…!
+                    </div>
+                    </div>
                 </div>
-            </div>
         );
     }
 }
@@ -160,7 +173,8 @@ class Board extends React.Component {
     }
 
     calcScore(correctTries, totalTries) {
-        return (correctTries / totalTries).toFixed(2);
+        /* return (correctTries / totalTries).toFixed(2); */
+        return totalTries - correctTries;
     }
 
     checkChoice(choice, correct) {
@@ -196,8 +210,8 @@ class Board extends React.Component {
             const choiceAtNextIndex = this.state.choices[i + 1];
             choiceElements.push(
                 <div className="choice-column col s6">
-                    <Choice value={choiceAtCurrentIndex} isHelpOn={this.state.isHelpMode} correct={this.state.correctChoice} onClick={() => this.checkChoice(choiceAtCurrentIndex, this.state.correctChoice)} />
-                    <Choice value={choiceAtNextIndex} isHelpOn={this.state.isHelpMode} correct={this.state.correctChoice} onClick={() => this.checkChoice(choiceAtNextIndex, this.state.correctChoice)} />
+                    <Choice value={choiceAtCurrentIndex} isHelpOn={this.state.isHelpMode} correct={this.state.correctChoice} onClick={() => this.checkChoice(choiceAtCurrentIndex, this.state.correctChoice)} className="choice-left" />
+                    <Choice value={choiceAtNextIndex} isHelpOn={this.state.isHelpMode} correct={this.state.correctChoice} onClick={() => this.checkChoice(choiceAtNextIndex, this.state.correctChoice)} className="choice-right" />
                 </div>
             );
         }
@@ -211,23 +225,48 @@ class Board extends React.Component {
             );
         }
         return (
-            <div className="choice-layout row grey">
+            <div className="choice-layout row">
                 {choiceElements}
             </div>
         );
     }
 
+    /* renderScore() {
+     * const successRatio = this.props.score;
+     * return (
+     * <div className="header">
+     * <div className="greeting blue-grey blue-grey-darken-1 deep-orange-text text-accent-2">
+     * Hello player {this.state.currentPlayer}!
+     * </div>
+     * <div className="score blue-grey blue-grey-darken-2 deep-orange-text text-accent-1">
+     * Your success rate is: {successRatio}
+     * </div>
+     * </div>
+     * );
+     * }
+     *  */
+
     renderScore() {
-        const successRatio = this.props.score;
+        /* <div className="greeting blue-grey blue-grey-darken-1 deep-orange-text text-accent-2"> */
+        /* Hello player {this.state.currentPlayer}! */
+        /* </div> */
+        const currentScore = this.props.score;
         return (
             <div className="header">
-                <div className="greeting blue-grey blue-grey-darken-1 deep-orange-text text-accent-2">
-                    Hello player {this.state.currentPlayer}!
-                </div>
                 <div className="score blue-grey blue-grey-darken-2 deep-orange-text text-accent-1">
-                    Your success rate is: {successRatio}
+                    {this.renderFlames(currentScore)}
                 </div>
             </div>
+        );
+    }
+
+    renderFlames(count) {
+        var flames = [];
+        for (var i = count; i >0; i--) {
+            flames.push(i);
+        }
+        return (
+            flames.map(flame => <Flame key={flame.id} />)
         );
     }
 
@@ -243,44 +282,55 @@ class Board extends React.Component {
         );
     }
 
-    handlePlayerSwitch(toPlayer) {
-        this.setState((state, props) => {
-            return {currentPlayer: toPlayer};
-        });
-    }
+    /* handlePlayerSwitch(toPlayer) {
+     *     this.setState((state, props) => {
+     *         return {currentPlayer: toPlayer};
+     *     });
+     * }
 
-    renderSwitcher(isPlayer) {
-        var toPlayer;
-        if (isPlayer === this.state.playerOne) {
-            toPlayer = this.state.playerTwo;
-        } else {
-            toPlayer = this.state.playerOne;
-        }
-        return (
-            <Switcher onClick={() => this.handlePlayerSwitch(toPlayer)} />
-        );
-    }
-
+     * renderSwitcher(isPlayer) {
+     *     var toPlayer;
+     *     if (isPlayer === this.state.playerOne) {
+     *         toPlayer = this.state.playerTwo;
+     *     } else {
+     *         toPlayer = this.state.playerOne;
+     *     }
+     *     return (
+     *         <Switcher onClick={() => this.handlePlayerSwitch(toPlayer)} />
+     *     );
+     * }
+     */
     render () {
         return (
             <div className="board card container grey darken-2">
                 <div className="card-content">
-                    <div className="banner row grey darken-1 deep-orange-text text-darken-3">
-                        <div className="col card-title s6">
-                            Let’s Play <i>Ludus</i>!
+                    <div className="banner grey darken-1 deep-orange-text text-darken-3">
+                        <div className="row">
+                            <div className="col card-title s6">
+                                Let’s Play <i>Ludus</i>!
+                            </div>
                         </div>
-                        <div className="col s6">
+                        <div className="row">
                             {this.renderScore()}
                         </div>
                     </div>
                     <Goal value={this.state.goal} />
                     {this.renderChoices()}
                 </div>
-                {this.renderSwitcher(this.state.currentPlayer)}
-                {this.renderHelpButton()}
+                {/* {this.renderSwitcher(this.state.currentPlayer)} */}
+                    {this.renderHelpButton()}
             </div>
         );
     }
+}
+
+class Flame extends React.Component {
+    render () {
+        return (
+            <div className="col s1 flame">
+            </div>
+        );
+    };
 }
 
 class Dash extends React.Component {
