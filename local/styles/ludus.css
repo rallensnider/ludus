@@ -1,0 +1,42 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Libre Baskerville', serif;
+    background: #111;
+    color: #ddd;
+}
+
+.help {
+    background: blue;
+}
+
+.choice {
+    background: #666;
+}
+
+.choices-column {
+    background: #777;
+}
+
+.goal {
+    background: #555;
+}
+
+.score {
+    background: #777;
+}
+
+.banner {
+    background: #666;
+}
+
+.board {
+    background: #444;
+}
+
+.game {
+    background: #333;
+}
+
+#id {
+    background: #222;
+}

@@ -1,0 +1,165 @@
+body {
+    /* font-family: 'Press Start 2P', 'Source Sans Pro', sans-serif; */
+    /* font-family: 'Merriweather', 'Libre Baskerville', serif; */
+    /* font-family: 'Merriweather', serif; */
+    font-family: 'Press Start 2P', cursive;
+    /* font-family: 'Merriweather Sans', sans-serif; */
+    background: #111;
+    color: #ddd;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.flame {
+    height: 144px;
+    widht: 144px;
+    background-image: url('./img/zelda_fire.GIF');
+    background-size: contain;
+    background-clip: padding-box;
+    background-origin: padding-box;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.flat {
+    /* ht — following few css snippets via <https://stackoverflow.com/a/34543453/8196522> & <https://stackoverflow.com/a/34543723/8196522> */
+    border: 0;
+    background: none;
+    box-shadow: none;
+    border-radius: 0px;
+    outline: none;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.flat:focus {
+    background:none;
+    outline: none;
+    border:none;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.flat:hover {
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.flat:visited {
+    border: 0;
+    background: none;
+    box-shadow: none;
+    border-radius: 0px;
+    outline: none;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.help {
+    background: blue;
+}
+
+.clue {
+    background-color: #000;
+    background-image:
+        url('./img/themouth.png');
+    background-size: contain;
+    background-clip: padding-box;
+    background-origin: padding-box;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.bubble {
+    width: 736px;
+    height: 468px;
+    /* TODO: offset text */
+    background-color: transparent;
+    background-image:
+        url('./img/bubble-e-bg3x.png');
+    background-size: contain;
+    background-clip: padding-box;
+    background-origin: padding-box;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 25%;
+    font-family: 'Press Start 2P', cursive;
+}
+
+/* TODO: change to content-contained <img /> */
+.choice-button {
+    background-color: #F8F8FF;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.choice-left {
+    width: 248px;
+    height: 80px;
+    background-color: #F8F8FF;
+    background-image: url('./img/arrowleft3x.png');
+    background-size: contain;
+    background-clip: padding-box;
+    background-origin: padding-box;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.choice-right {
+    width: 248px;
+    height: 80px;
+    background-color: #F8F8FF;
+    background-image: url('./img/arrowright3x.png');
+    background-size: contain;
+    background-clip: padding-box;
+    background-origin: padding-box;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.choice {
+    background-color: #F8F8FF;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.choices-column {
+    background-color: #F8F8FF;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.choice-layout {
+    background-color: #F8F8FF;
+}
+
+.goal {
+    background: #000000;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.score {
+    background: #777;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.banner {
+    background: #666;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.board {
+    background: #444;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.game {
+    background: #333;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#id {
+    background: #222;
+    font-family: 'Press Start 2P', cursive;
+}
