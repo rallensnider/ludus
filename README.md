@@ -12,6 +12,10 @@ In ancient times, the great city of Troy was destroyed by treachery &amp; fire..
   for [WIAD Seattle](https://www.worldiaday.org/events/seattle/2019) 2019.
     * Generally speaking, this material used under license or fair use guidelines; all rights reserved by the respective owners where relevant.
     * For more details & a full list of citations & sources, please visit <https://allensnider.com/ludus>.
+
+## Pre-reqs
+
+* You will need [Node.JS & NPM](https://nodejs.org/en/download/) 
    
 ## Quick Start
 
