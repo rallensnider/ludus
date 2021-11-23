@@ -5,6 +5,7 @@ In ancient times, the great city of Troy was destroyed by treachery &amp; fire..
 
 * Kind of a big spaghetti-mess of code right now. 
 * Very much a work in progress.
+* Old stuff was tucked away in the `OLD` directory.
 * Admittedly kind of cheeky.
 * Currently implementing in React for the sake of a deep dive into learning React.
 * Looking ahead to getting a playable demo into players’ hands.
@@ -19,7 +20,7 @@ In ancient times, the great city of Troy was destroyed by treachery &amp; fire..
    
 ## Quick Start
 
-1. `cd local/my-app/`
+1. `cd local/new-ludus/`
 
 2. `npm start`
 
